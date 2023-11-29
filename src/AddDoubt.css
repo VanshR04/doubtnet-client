@@ -1,0 +1,72 @@
+/* AddDoubt.css */
+
+.add-doubt {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content within the component */
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+    text-align: center; /* Center the header */
+  }
+  
+  .head-add {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .description-add {
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Styling for ReactQuill editor */
+  .ql-editor {
+    min-height: 150px; /* Adjust the height as needed */
+    font-size: 1rem;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  /* Style the toolbar as needed */
+  .ql-toolbar {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 5px;
+  }
+
+  /* AddDoubt.css */
+
+.submit {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition for the background color change on hover */
+  }
+  
+  .submit:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+  }
+  
+  

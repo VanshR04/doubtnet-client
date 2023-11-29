@@ -1,0 +1,58 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  h1 {
+    margin: 0 0 20px;
+  }
+  
+  .login-form {
+    text-align: left;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .password-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .show-password {
+    background: #0078d4;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .submit {
+    background: #0078d4;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .submit:hover {
+    background: #005cbf;
+  }
+  

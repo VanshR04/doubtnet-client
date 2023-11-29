@@ -1,0 +1,40 @@
+/* About.css */
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .description {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .description h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .description p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  

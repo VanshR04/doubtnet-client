@@ -1,0 +1,58 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links.active {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+}
+
+.nav-op{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+    display: none;
+  }
+}

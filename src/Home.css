@@ -1,0 +1,100 @@
+.doubt {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  max-width: 500px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  margin-top: 25px;
+}
+
+.doubt-head {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.doubt-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reply-text {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.doubt-reply {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.doubt-reply:hover {
+  background-color: #0056b3;
+}
+
+.add-favourite {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.add-favourite:hover {
+  text-decoration: underline;
+}
+
+.doubt-list {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.doubt-list li {
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.list-ind{
+  text-decoration: underline;
+}
+
+.delete {
+  background-color: #ff4444;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.delete:hover {
+  background-color: #ff0000;
+}
+
+.no-doubts {
+  text-align: center;
+  font-size: 16px;
+  color: #999; /* You can adjust the color as needed */
+  padding: 10px;
+}
+
