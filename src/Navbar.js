@@ -10,6 +10,7 @@ function Navbar() {
   const history = useNavigate()
   const [add, setadd] = useState(false)
   const [issignout, setissignout] = useState(false)
+  const [about, setabout] = useState(false)
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
@@ -41,6 +42,9 @@ function Navbar() {
     setadd(true)
   }
 
+  function aboutpage(ev){
+    setabout(true)
+  }
 
 
   if(add){
@@ -49,6 +53,10 @@ function Navbar() {
 
   if(issignout){
     history('/login')
+  }
+
+  if(about){
+    history('/about')
   }
 
   return (
@@ -60,7 +68,7 @@ function Navbar() {
       <ul className={`nav-links ${menuVisible ? 'active' : ''}`}>
         <li onClick={closeMenu}><a href="/" className='nav-op'>Home</a></li>
         {user && <li onClick={closeMenu}><a onClick = {adddoubt} className='nav-op'>Add Doubt</a></li>}
-        <li onClick={closeMenu}><a href="/about" className='nav-op'>About the Creator</a></li>
+        <li onClick={closeMenu}><a onClick={aboutpage} className='nav-op'>About the Creator</a></li>
         {!user && <li onClick={closeMenu}><a href='/signup' className='nav-op'>Signup</a></li>}
         {user&& <li className='nav-op'>Welcome {location.state.name}</li>}
         {user && <li className='nav-op' onClick={signout}>Signout</li>}
