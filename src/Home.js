@@ -59,7 +59,7 @@ function Home() {
                         <h1 className="doubt-head">{doubt.head}</h1>
                         <h3 className='doubt-description'>{doubt.body.substring(3, doubt.body.length - 4)}</h3>
                         <div className='bottom'>
-                            <textarea className='reply-text' onChange={(e) => setreply(e.target.value)} value={reply}></textarea>
+                            <textarea className='reply-text' onChange={(e) => setreply(e.target.value)} key = {doubt._id} value={reply}></textarea>
                             <div className='doubt-reply' onClick={() => replycom(doubt._id)}>reply</div>
                             <div className='add-favourite' onClick={() => like(doubt._id)}>Like {doubt.likes}</div>
                             {user === doubt.author && <div className='delete' onClick={() => deletecom(doubt._id)}>Delete</div>}
