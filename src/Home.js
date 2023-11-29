@@ -10,6 +10,7 @@ function Home() {
     const [doubts, setdoubts] = useState([])
     const [reply, setreply] = useState("")
     const [user,setuser] = useState(null)
+    const [likes,setlikes] = useState(true)
     const location = useLocation()
     useEffect(() => {
         if(location.state && location.state.name!==null){
@@ -28,6 +29,7 @@ function Home() {
                 "Content-Type": "application/json"
             }
         })
+        setlikes(!likes)
     }
 
     async function replycom(id) {
