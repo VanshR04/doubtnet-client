@@ -11,6 +11,8 @@ function Navbar() {
   const [add, setadd] = useState(false)
   const [issignout, setissignout] = useState(false)
   const [about, setabout] = useState(false)
+  const [signup,setsignup] = useState(false)
+  const [home,sethome] = useState(false)
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
@@ -46,6 +48,14 @@ function Navbar() {
     setabout(true)
   }
 
+  function signuppage(){
+    setsignup(true)
+  }
+
+  function homepage(){
+    sethome(true)
+  }
+
 
   if(add){
     history('/add-doubt', {state : {user : user}})
@@ -58,6 +68,12 @@ function Navbar() {
   if(about){
     history('/about')
   }
+  if(signup){
+    history('/signup')
+  }
+  if(home){
+    history('/home')
+  }
 
   return (
     <nav className="navbar">
@@ -66,10 +82,10 @@ function Navbar() {
         {menuVisible ? <FaTimes /> : <FaBars />}
       </div>
       <ul className={`nav-links ${menuVisible ? 'active' : ''}`}>
-        <li onClick={closeMenu}><a href="/" className='nav-op'>Home</a></li>
+        <li onClick={closeMenu}><a onClick={homepage} className='nav-op'>Home</a></li>
         {user && <li onClick={closeMenu}><a onClick = {adddoubt} className='nav-op'>Add Doubt</a></li>}
         <li onClick={closeMenu}><a onClick={aboutpage} className='nav-op'>About the Creator</a></li>
-        {!user && <li onClick={closeMenu}><a href='/signup' className='nav-op'>Signup</a></li>}
+        {!user && <li onClick={closeMenu}><a onClick={signuppage} className='nav-op'>Signup</a></li>}
         {user&& <li className='nav-op'>Welcome {location.state.name}</li>}
         {user && <li className='nav-op' onClick={signout}>Signout</li>}
       </ul>
