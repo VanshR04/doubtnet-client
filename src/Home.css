@@ -98,3 +98,23 @@
   padding: 10px;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Adjust the z-index to ensure the overlay appears on top of other elements */
+}
+
+.overlay-content {
+  background: #fff; /* White background for the content inside the overlay */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Add more styles as needed */

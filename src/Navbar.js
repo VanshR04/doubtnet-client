@@ -44,16 +44,20 @@ function Navbar() {
     setadd(true)
   }
 
-  function aboutpage(ev){
-    setabout(true)
+  function aboutpage(){
+    history('/about', {state : {user : user}})
   }
 
   function signuppage(){
     setsignup(true)
   }
 
+  function loginpage(){
+    history('/login')
+  }
+
   function homepage(){
-    sethome(true)
+    history('/home')
   }
 
 
@@ -64,15 +68,8 @@ function Navbar() {
   if(issignout){
     history('/login')
   }
-
-  if(about){
-    history('/about')
-  }
   if(signup){
     history('/signup')
-  }
-  if(home){
-    history('/home')
   }
 
   return (
@@ -86,6 +83,7 @@ function Navbar() {
         {user && <li onClick={closeMenu}><a onClick = {adddoubt} className='nav-op'>Add Doubt</a></li>}
         <li onClick={closeMenu}><a onClick={aboutpage} className='nav-op'>About the Creator</a></li>
         {!user && <li onClick={closeMenu}><a onClick={signuppage} className='nav-op'>Signup</a></li>}
+        {!user && <li onClick={closeMenu}><a onClick={loginpage} className='nav-op'>Login</a></li>}
         {user&& <li className='nav-op'>Welcome {location.state.name}</li>}
         {user && <li className='nav-op' onClick={signout}>Signout</li>}
       </ul>

@@ -74,8 +74,8 @@ function Signup(){
                         </div>
                 )}
                 <button className="submit" onClick={adduser}>Signup</button>
-                <Link to={'/login'}>Login</Link>
                 <button className="submit" onClick={guestContinue}>Continue as Guest</button>
+                <Link to={'/login'} className="submit">Login</Link>
             </form>
         </div>
     )

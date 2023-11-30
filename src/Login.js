@@ -70,7 +70,7 @@ function Login(){
                         </div>
                 )}
                 <button className="submit" onClick={login}>Login</button>
-                <Link to={'/'}>Signup</Link>
+                <Link to={'/'} className="submit">Signup</Link>
             </form>
         </div>
     )

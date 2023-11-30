@@ -2,6 +2,8 @@ import { Suspense, useEffect, useState } from 'react'
 import './Home.css'
 import Navbar from './Navbar'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { AiOutlineLike } from "react-icons/ai";
+import { AiTwotoneLike } from "react-icons/ai";
 
 function Home() {
 
@@ -10,8 +12,12 @@ function Home() {
     const [doubts, setdoubts] = useState([])
     const [reply, setreply] = useState("")
     const [user,setuser] = useState(null)
-    const [likes,setlikes] = useState(true)
+    const [likes,setlikes] = useState(null)
     const location = useLocation()
+    const [dlike,setdlike] = useState(false)
+    const [del,setdel] = useState(0)
+    const [wanttoreply, setwanttoreply] = useState(false)
+    const box = document.getElementById("reply")
     useEffect(() => {
         if(location.state && location.state.name!==null){
         setuser(location.state.name)
@@ -21,7 +27,7 @@ function Home() {
                 setdoubts(doubts)
             })
         })
-    },[location.state])
+    },[location.state,doubts,del,reply])
     async function like(id) {
         await fetch(`${process.env.REACT_APP_API_URL}/${id}/like`, {
             method: "PUT",
@@ -30,6 +36,18 @@ function Home() {
             }
         })
         setlikes(!likes)
+        setdlike(true)
+    }
+
+    async function dislike(id){
+        await fetch(`${process.env.REACT_APP_API_URL}/${id}/dislike`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        setlikes(!likes)
+        setdlike(false)
     }
 
     async function replycom(id) {
@@ -42,14 +60,19 @@ function Home() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data)
-        }).then(setreply(''))
+        })        
+        setreply('')
+        box.innerText = ""
     }
 
     async function deletecom(id){
         await fetch(`${process.env.REACT_APP_API_URL}/${id}/delete`, {
             method: "DELETE"
         })
+        setdel(del+1)
+        console.log("deleted");
     }
+    
 
     return (
         <>
@@ -61,9 +84,10 @@ function Home() {
                         <h1 className="doubt-head">{doubt.head}</h1>
                         <h3 className='doubt-description'>{doubt.body.substring(3, doubt.body.length - 4)}</h3>
                         <div className='bottom'>
-                            <textarea className='reply-text' onChange={(e) => setreply(e.target.value)} key = {doubt._id} value={reply}></textarea>
+                            <textarea className={doubt._id} style={{"width" : "100%" ,"padding" : "8px" , "border": "1px solid #ccc", "border-radius" : "5px", "font-size" : "14px"}} id  = "reply" onChange={(e) => setreply(e.target.value)} key = {doubt._id}></textarea>
                             <div className='doubt-reply' onClick={() => replycom(doubt._id)}>reply</div>
-                            <div className='add-favourite' onClick={() => like(doubt._id)}>Like {doubt.likes}</div>
+                            {/* <div className={doubt._id} style = {{"color": "#007bff",  "cursor": "pointer",  "font-size": "14px",  "margin-left": "10px"}} onClick={() => like(doubt._id)}><AiOutlineLike /> {doubt.likes}</div>
+                            <div className={doubt._id} style = {{"color": "#007bff",  "cursor": "pointer",  "font-size": "14px",  "margin-left": "10px"}} onClick={() => dislike(doubt._id)}><AiTwotoneLike /> {doubt.likes}</div> */}
                             {user === doubt.author && <div className='delete' onClick={() => deletecom(doubt._id)}>Delete</div>}
                         </div>
                         {doubt.replies.length > 0 && (

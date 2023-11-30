@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState , useEffect} from 'react';
 import './About.css';
 import Navbar from './Navbar';
+import { useLocation } from 'react-router-dom';
 
 function About() {
+
+  const [user,setuser] = useState(null)
+  const location = useLocation()
+
+  useEffect(() => {
+    if(location.state && location.state.user !== null){
+      setuser(location.state.user)
+    }
+  },[location.state]);
+
   return (<>
   <Navbar />
     <div className="about">

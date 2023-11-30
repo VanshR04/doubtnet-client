@@ -10,6 +10,7 @@ function AddDoubt(){
     const [redirect, setredirect] = React.useState(false)
     const location = useLocation()
     const author = location.state.user
+    console.log(author);
     const history = useNavigate()
 
     async function submit(ev){
